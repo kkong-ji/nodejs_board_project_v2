@@ -1,0 +1,8 @@
+routes/** linguist-documentation=false
+routes/** linguist-vendored=false
+
+public/** linguist-documentation=false
+public/** linguist-vendored=false
+
+models/** linguist-documentation=false
+models/** linguist-vendored=false
