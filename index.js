@@ -47,6 +47,7 @@ app.use(function (req, res, next) {
 // Routes
 app.use('/', require('./routes/home'));
 app.use('/auth', require('./routes/auth'));
+app.use('/public', express.static(__dirname + '/public')); 
 app.use('/posts', util.getPostQueryString, require('./routes/posts'));
 app.use('/users', require('./routes/users'));
 app.use('/comments', util.getPostQueryString, require('./routes/comments'));
