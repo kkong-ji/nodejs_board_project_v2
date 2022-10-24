@@ -6,6 +6,11 @@
     <%- include('../partials/head') %>
 </head>
 
+<header>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+</header>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Signika:wght@300&display=swap');
@@ -13,36 +18,56 @@
 
 <body>
     <%- include('../partials/nav') %>
+
+    <form class="user-form" action="/login" method="post">
     <script type="text/javascript" src="/public/js/login.js" defer></script>
     
     <link rel="stylesheet" type="text/css" href="/public/css/login.css"/>
     
     <div class="login-box">
     <div class="title">Wonderful Korea</div>
-      <div class="form signup">
-        <div class="form-header">
-          <div class="show-signup">Sign Up</div>
-          <div class="show-signin">Sign In</div>
-      </div>
-      <div class="arrow"></div>
+      <div class="form signin">
       <div class="form-elements">
         <div class="form-element">
-          <input type="text" placeholder="아이디">
+          <input type="text" placeholder="아이디" id="username" name="username" value="<%= username %>"
+          class="form-control <%= (errors.username)?'is-invalid':'' %>">
+                            <% if(errors.username){ %>
+                                <span class="invalid-feedback">
+                                    <%= errors.username %>
+                                </span>
+                              </h1>  
+                        </div>
+                            <% } %>
         </div>
+
         <div class="form-element">
-          <input type="password" placeholder="비밀번호">
+          <input type="password" placeholder="비밀번호" id="password" name="password" value=""
+          class="form-control <%= (errors.password)?'is-invalid':'' %>">
+          <% if(errors.password){ %>
+            <span class="invalid-feedback">
+        <%= errors.password %>
+            </span>
+        <% } %>
+
+        <% if(errors.login){ %>
+          <div class="invalid-feedback d-block">
+              <%= errors.login %>
+          </div>
+              <% } %>
+          </div>
         </div>
-        <div class="form-element">
-          <input type="email" placeholder="이메일">
+        
+        <div class="buttons">
+          <button id="submit-btn" class="btn-hover color-8" value="Login">Log In</button>
         </div>
-        <div class="form-element">
-          <button id="submit-btn">Sign Up</button>
-        </div>
+        
         <p class="font" style="color: #072f6e">or Social Login</p>
         <a href="/auth/google" class="social-button" id="google-connect"> <span>Connect with Google</span></a>
       </div>
       </div>
     </div>
+
+    </form>
 </body>
 
 <footer>

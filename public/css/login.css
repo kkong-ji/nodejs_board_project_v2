@@ -5,6 +5,7 @@ body {
   background-image: url(/public/images/hanriver.jpg);
   background-repeat : no-repeat;
   background-size : cover;
+
 }
 
 .title {
@@ -36,7 +37,7 @@ body {
   width: 400px;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 250px 0;
+  padding: 230px 0;
 }
 
 .form {
@@ -54,22 +55,7 @@ body {
   align-items:center;
   text-align:center;
 }
-.form .form-header > div {
-  width:calc(100% / 3);
-  color:#ddd;
-  font-size:18px;
-  font-weight:600;
-  cursor:pointer;
-}
-.form.signup .form-header div.show-signup {
-  color:#f1575b;
-}
-.form.signin .form-header div.show-signin {
-  color:#f1575b;
-}
-.form.reset .form-header div.show-reset {
-  color:#f1575b;
-}
+
 .form .form-elements {
   margin-top:15px;
 }
@@ -88,42 +74,57 @@ body {
   border:1px solid #222;
   background:#f5f5f5;
 }
-.form .form-elements button {
-  width:100%;
-  padding:10px;
-  font-size:16px;
-  font-weight:600;
-  margin-top: 10px;
-  margin:5px 0px;
-  border-radius:10px;
-  background:#f1575b;
-  color:#f5f5f5;
-  cursor:pointer;
-  border:none;
-  outline:none;
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.form .arrow {
-  position:absolute;
-  top:51px;
-  width:0;
-  height:0;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  border-bottom:10px solid transparent;
+
+.buttons {
+  margin: 10%;
+  text-align: center;
 }
-.form.signup .arrow {
-  left:calc(calc(100% / 3) / 2);
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
-.form.signin .arrow {
-  left:calc(calc(100% / 3) + calc(calc(100% / 3) / 2.2)) ;
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
-.form.signin .form-elements > div:nth-child(3) {
-  height:0px;
-  opacity:0;
+
+.btn-hover:focus {
+  outline: none;
 }
+
+.btn-hover.color-8 {
+  background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
 .divider {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-family: 'Oswald', sans-serif
 }
 
