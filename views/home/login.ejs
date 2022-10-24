@@ -6,12 +6,19 @@
     <%- include('../partials/head') %>
 </head>
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Signika:wght@300&display=swap');
+</style>
+
 <body>
     <%- include('../partials/nav') %>
     <script type="text/javascript" src="/public/js/login.js" defer></script>
     
     <link rel="stylesheet" type="text/css" href="/public/css/login.css"/>
+    
     <div class="login-box">
+    <div class="title">Wonderful Korea</div>
       <div class="form signup">
         <div class="form-header">
           <div class="show-signup">Sign Up</div>
@@ -20,17 +27,19 @@
       <div class="arrow"></div>
       <div class="form-elements">
         <div class="form-element">
-          <input type="text" placeholder="Username">
+          <input type="text" placeholder="아이디">
         </div>
         <div class="form-element">
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder="비밀번호">
         </div>
         <div class="form-element">
-          <input type="password" placeholder="Confirm password">
+          <input type="email" placeholder="이메일">
         </div>
         <div class="form-element">
           <button id="submit-btn">Sign Up</button>
         </div>
+        <p class="font" style="color: #072f6e">or Social Login</p>
+        <a href="/auth/google" class="social-button" id="google-connect"> <span>Connect with Google</span></a>
       </div>
       </div>
     </div>

@@ -1,10 +1,30 @@
+
 body {
-  font-family:"Raleway";
   height: 100vh;
   width: 100vw;
   background-image: url(/public/images/hanriver.jpg);
   background-repeat : no-repeat;
   background-size : cover;
+}
+
+.title {
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  padding: 20;
+  margin: 50;
+  height: 20px;
+  font-weight: 300;
+  font-size: 35px;
+  top: -220px;
+  color: #080808;
+}
+
+.font {
+  font-family: 'Signika', sans-serif;
+  font-weight: bold;
+  margin: 20px auto 0;
 }
 
 .login-box {
@@ -16,7 +36,7 @@ body {
   width: 400px;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 160px 0;
+  padding: 250px 0;
 }
 
 .form {
@@ -25,7 +45,7 @@ body {
   left:50%;
   transform:translate(-50%,-50%);
   width:300px;
-  height:250px;
+  height:330px;
   padding:5px;
 }
 .form .form-header {
@@ -100,6 +120,65 @@ body {
 .form.signin .form-elements > div:nth-child(3) {
   height:0px;
   opacity:0;
+}
+.divider {
+  position: relative;
+  margin-bottom: 15px;
+  font-family: 'Oswald', sans-serif
+}
+
+.social-button {
+  background-position: 25px 0px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 3px;
+  margin: 10px auto;
+  outline: rgb(255, 255, 255) none 0px;
+  padding-left: 20%;
+  transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+#google-connect {
+  background: rgb(255, 255, 255) url('https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+  border: 1px solid rgb(220, 74, 61);
+}
+
+#google-connect span {
+  box-sizing: border-box;
+  color: rgb(220, 74, 61);
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  border: 0px none rgb(220, 74, 61);
+  outline: rgb(255, 255, 255) none 0px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+#google-connect:hover span {
+  color: #FFF;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .footertext {
