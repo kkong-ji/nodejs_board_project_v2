@@ -216,7 +216,7 @@ img {
 
 .footer{
     width: 100%;
-    height: 12px;
+    height: 0px;
     position: absolute;  
     bottom: 0;
     left: 0;
@@ -266,4 +266,10 @@ img {
     text-align: center;
     padding: 30px 0;
 }
+
+.nav-logout {
+    font-weight:bold;
+    text-align: right;
+}
+
 

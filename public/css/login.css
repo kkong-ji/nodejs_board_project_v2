@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 
 body {
   height: 100vh;
@@ -128,58 +129,61 @@ body {
   font-family: 'Oswald', sans-serif
 }
 
-.social-button {
-  background-position: 25px 0px;
-  box-sizing: border-box;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
+.button {
+  margin-top: 15px;
+  margin-left: 15px;
+  width: auto;
   display: inline-block;
-  height: 50px;
-  line-height: 50px;
-  text-align: left;
+  padding: 0 18px 0 6px;
+  border: 0 none;
+  border-radius: 5px;
   text-decoration: none;
-  text-transform: uppercase;
-  vertical-align: middle;
-  width: 100%;
-  border-radius: 3px;
-  margin: 10px auto;
-  outline: rgb(255, 255, 255) none 0px;
-  padding-left: 20%;
-  transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+  transition: all 250ms linear;
+}
+.button:hover {
+  text-decoration: none;
 }
 
-#google-connect {
-  background: rgb(255, 255, 255) url('https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
-  border: 1px solid rgb(220, 74, 61);
+.button--social-login {
+  margin-bottom: 12px;
+  margin-right: 10px;
+  color: white;
+  height: 50px;
+  line-height: 46px;
+  position: relative;
+  text-align: left;
 }
-
-#google-connect span {
-  box-sizing: border-box;
-  color: rgb(220, 74, 61);
-  cursor: pointer;
+.button--social-login .icon {
+  margin-right: 12px;
+  font-size: 24px;
+  line-height: 24px;
+  width: 42px;
+  height: 24px;
   text-align: center;
-  text-transform: uppercase;
-  border: 0px none rgb(220, 74, 61);
-  outline: rgb(255, 255, 255) none 0px;
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+}
+.button--social-login .icon:before {
+  display: inline-block;
+  width: 40px;
+}
+.button--social-login .icon:after {
+  content: "";
 }
 
-#google-connect:hover span {
-  color: #FFF;
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+.button--google {
+  background-color: #3F85F4;
+  border: 1px solid #0f66f1;
+}
+.button--google .icon {
+  border-right: 1px solid #0f66f1;
+}
+.button--google .icon:after {
+  border-right: 1px solid #6fa4f7;
+}
+.button--google:hover {
+  background-color: #2776f3;
 }
 
 .footertext {

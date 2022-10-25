@@ -5,6 +5,15 @@ var router = express.Router();
 var User = require('../models/User');
 var util = require('../util');
 
+// Index // 1
+router.get('/', function(req, res){
+    User.find({})
+      .sort({username:1})
+      .exec(function(err, users){
+        if(err) return res.json(err);
+        res.render('users/index', {users:users});
+      });
+  });
 
 // New
 router.get('/new', function (req, res) {

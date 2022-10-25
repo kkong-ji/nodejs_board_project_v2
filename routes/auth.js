@@ -11,5 +11,6 @@ router.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
+passport.authenticate('google', { scope: ['profile', 'email']})
 
 module.exports = router;

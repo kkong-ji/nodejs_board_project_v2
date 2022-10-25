@@ -34,7 +34,6 @@
             </form>
 
             <div>
-                <a class="btn btn-primary" href="/users">Back</a>
                 <% if(isAuthenticated && currentUser.id==user.id){ %>
                     <a class="btn btn-primary" href="/users/<%= user.username %>/edit">Edit</a>
                     <% } %>
