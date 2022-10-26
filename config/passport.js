@@ -52,16 +52,17 @@ passport.use(new GoogleStrategy(
     }, 
     function(request, accessToken, refreshToken, profile, done) {
         User.findOneAndUpdate({
-            googleId: profile.id
+            googleId: profile.displayName
         }, {upsert: true}, function (err, user) {
             if (user) {
                 return done (null, user);
             }
             else {
                 var newUser = {
-                    username: profile.id,
-                    password: 'kjh12345678',
-                    googleId: profile.id,
+                    username: profile.displayName,
+                    password: 'abc12345678',
+                    passwordConfirmation: 'abc12345678',
+                    googleId: profile.displayName,
                     name: profile.displayName,                 
                 };
                 User.create(newUser, function (err, user) {
