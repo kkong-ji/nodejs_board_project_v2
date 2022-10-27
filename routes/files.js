@@ -2,20 +2,29 @@ var express  = require('express');
 var router = express.Router();
 var File = require('../models/File');
 
-router.get('/:serverFileName/:originalFileName', function(req, res){ // 3
-  File.findOne({serverFileName:req.params.serverFileName, originalFileName:req.params.originalFileName}, function(err, file){ // 3-1
+router.get('/:serverFileName/:originalFileName', function(req, res){
+  File.findOne({serverFileName:req.params.serverFileName, originalFileName:req.params.originalFileName}, async function(err, file){ // 3-1
     if(err) return res.json(err);
 
-    var stream = file.getFileStream(); // 3-2
-    if(stream){ // 3-3
-      res.writeHead(200, {
+    var stream;
+    var statusCode = 200;
+
+    try {
+      stream = await file.getFileStream();
+    }
+    catch(e) {
+      statusCode = e;
+    }
+
+    if(stream){ 
+      res.writeHead(statusCode, {
         'Content-Type': 'application/octet-stream',
         'Content-Disposition': 'attachment; filename=' + file.originalFileName
       });
       stream.pipe(res);
     }
-    else { // 3-4
-      res.statusCode = 404;
+    else { 
+      res.statusCode = statusCode;
       res.end();
     }
   });

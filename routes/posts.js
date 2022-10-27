@@ -88,11 +88,16 @@ router.get('/new', util.isLoggedin, function(req, res){
 
 // create
 router.post('/', util.isLoggedin, upload.single('attachment'), async function(req, res){
-  var attachment = req.file?await File.createNewInstance(req.file, req.user._id):undefined;
+  var attachment; 
+  try {
+    attachment = req.file?await File.createNewInstance(req.file, req.user._id):undefined;
+  }
+  catch(err) {
+    return res.json(err);
+  }
   req.body.attachment = attachment;
   req.body.author = req.user._id;
-  
-  
+
   Post.create(req.body, function(err, post){
     if(err){
       req.flash('post', req.body);
