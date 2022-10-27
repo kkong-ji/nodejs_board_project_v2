@@ -70,9 +70,12 @@
             <div class="row mb-3">
                 <div class="col-2">
                     <% if(isAuthenticated){ %>
-                        <a class="btn btn-primary" href="/posts/new<%= getPostQueryString() %>">New</a>
+                        <a class="btn btn-primary" href="/posts/new<%= getPostQueryString() %>">등록</a>
                         <% } %>
                 </div>
+                <br></br>
+                <br></br>
+                <br></br>
                 <nav class="col-8">
                     <% var offset=2; var previousBtnEnabled=currentPage>1;
                         var nextBtnEnabled = currentPage<maxPage; %>
@@ -100,11 +103,13 @@
                             </ul>
                 </nav>
             </div>
+            <br><br>
+            <hr size="5"></hr>
             <form action="/posts" method="get" class="post-index-tool">
                 <div class="form-row">
                     <div class="form-group col-3">
                         <label>Show</label>
-                        <select name="limit" class="custom-select"
+                        <select name="limit" class="custom-select" style="text-align:left; width:97px;"
                             onchange="this.parentElement.parentElement.parentElement.submit()">
                             <option value="5" <%=limit==5?'selected':'' %>>5 posts</option>
                             <option value="10" <%=limit==10?'selected':'' %>>10 posts</option>
@@ -123,7 +128,7 @@
                             </select>
                             <input minLength="3" type="text" name="searchText" value="<%= searchText %>">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-primary" type="submit">search</button>
+                                <button class="btn btn-outline-primary" type="submit" style="position:relative; left:300px; bottom:60px;">검색</button>
                             </div>
                         </div>
                     </div>

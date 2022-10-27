@@ -22,7 +22,7 @@
 
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" id="title" name="title" value="<%= post.title %>"
+                    <input type="text" id="title" name="title" value="<%= post.title %>" style="text-align:left; width:800px;"
                         class="form-control <%= (errors.title)?'is-invalid':'' %>">
                     <% if(errors.title){ %>
                         <span class="invalid-feedback">
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label for="category">Category</label>
                     <input type="text" id="changeInput" value="<%= post.Category %>"
-                    class="form-control <%= (errors.category)?'is-invalid':'' %>"readonly/>
+                    class="form-control <%= (errors.category)?'is-invalid':'' %>" style="text-align:left; width:160px;" readonly/>
                         <div class="invalid-feedback">
                             Category 항목은 필수입니다!
                         </div>
@@ -80,8 +80,8 @@
                     <% } %>
 
                         <div>
-                            <a class="btn btn-primary" href="/post">Back</a>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a class="btn btn-primary" href="/post">이전으로</a>
+                            <button type="submit" class="btn btn-primary">완료</button>
                         </div>
 
             </form>

@@ -2,7 +2,7 @@
 
     <div class="border-top">
         <% if(comment.isDeleted){ %>
-            <div class="text-muted p-2">(Deleted Comment)</div>
+            <div class="text-muted p-2">(삭제된 댓글입니다.)</div>
             <% } else { %>
                 <div class="row pt-1 pb-1">
                     <div class="col-3 col-md-2 col-lg-1 pl-4">
@@ -24,17 +24,19 @@
                             <% if(isAuthenticated){ %>
                                 <small class="d-block">
                                     <a href="javascript:void(0)"
-                                        onclick="$('.comment-reply-enabled').removeClass('comment-reply-enabled'); $('.comment-edit-enabled').removeClass('comment-edit-enabled'); $('#comment-<%= comment._id %>').addClass('comment-reply-enabled')">reply</a>
+                                        onclick="$('.comment-reply-enabled').removeClass('comment-reply-enabled'); $('.comment-edit-enabled').removeClass('comment-edit-enabled'); $('#comment-<%= comment._id %>').addClass('comment-reply-enabled')">
+                                        답글
+                                    </a>
+                                    <br></br>    
                                     <% if(comment.author && currentUser.id==comment.author.id){ %>
                                         |
                                         <a href="javascript:void(0)"
-                                            onclick="$('.comment-reply-enabled').removeClass('comment-reply-enabled'); $('.comment-edit-enabled').removeClass('comment-edit-enabled'); $('#comment-<%= comment._id %>').addClass('comment-edit-enabled')">Edit</a>
+                                            onclick="$('.comment-reply-enabled').removeClass('comment-reply-enabled'); $('.comment-edit-enabled').removeClass('comment-edit-enabled'); $('#comment-<%= comment._id %>').addClass('comment-edit-enabled')">수정</a>
                                         |
-                                        <form
-                                            action="/comments/<%= comment._id %>?postId=<%= post._id %>&_method=delete<%= getPostQueryString(true) %>"
+                                        <form action="/comments/<%= comment._id %>?postId=<%= post._id %>&_method=delete<%= getPostQueryString(true) %>"
                                             method="post" class="d-inline">
                                             <a href="javascript:void(0)"
-                                                onclick="confirm('Do you want to delete this?')?this.parentElement.submit():null;">Delete</a>
+                                                onclick="confirm('정말 삭제하시겠습니까?')?this.parentElement.submit():null;">삭제</a>
                                         </form>
                                         <% } %>
                                 </small>
@@ -47,22 +49,22 @@
                         </div>
                         <div class="comment-reply">
                             <%- include('./comment-form', { actionUrl:'/comments?postId=' + post._id,
-            comment: {},
-            commentForm: commentForm,
-            commentError: commentError,
-            parentComment: comment._id,
-          }); %>
-        </div>
-      </div>
-    </div>
-  <% } %>
+                                comment: {},
+                                commentForm: commentForm,
+                                commentError: commentError,
+                                parentComment: comment._id,
+                            }); %>
+                        </div>
+                    </div>
+                </div>
+        <% } %>
 
-  <div class="ml-3">
-      <% if(comment.childComments) { %>
-        <% comment.childComments.forEach(function(childComment) { %> 
-            <%- include('./comment-show', { post: post, comment: childComment, commentForm: commentForm, commentError:
+        <div class="ml-3">
+            <% if(comment.childComments) { %>
+                <% comment.childComments.forEach(function(childComment) { %> 
+                    <%- include('./comment-show', { post: post, comment: childComment, commentForm: commentForm, commentError:
                                 commentError, }) %>
                                 <% }) %>
                                     <% } %>
-                        </div>
-                    </div>
+        </div>
+    </div>

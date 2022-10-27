@@ -12,15 +12,16 @@
                         </div>
                         <div class="col-4">
                             <% if(comment._id){ %>
-                                <button type="submit" class="btn btn-primary h-100 mr-2 pl-4 pr-4">Edit</button>
+                                <button type="submit" class="btn btn-primary h-100 mr-2 pl-4 pr-4">수정</button>
                                 <a href="javascript:void(0)"
-                                    onclick="$('#comment-<%= comment._id %>').removeClass('comment-edit-enabled')">Cancel</a>
+                                    onclick="$('#comment-<%= comment._id %>').removeClass('comment-edit-enabled')">취소</a>
                                 <% } else if(parentComment) {%>
-                                    <button type="submit" class="btn btn-primary h-100 mr-2">Add Reply</button>
+                                    <button type="submit" class="btn btn-primary" style="text-align:center; width:150px; height:60px; position:relative; bottom:20px">답글 남기기</button>
                                     <a href="javascript:void(0)"
-                                        onclick="$('#comment-<%= parentComment %>').removeClass('comment-reply-enabled')">Cancel</a>
+                                        onclick="$('#comment-<%= parentComment %>').removeClass('comment-reply-enabled')">취소</a>
+                                    <br></br>
                                     <% } else { %>
-                                        <button type="submit" class="btn btn-primary h-100 mr-2">Add Comment</button>
+                                        <button type="submit" class="btn btn-primary h-100 mr-2" style="text-align:center; width:120px; position:relative; bottom:20px">댓글 남기기</button>
                                         <% } %>
                         </div>
                     </div>
