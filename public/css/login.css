@@ -34,11 +34,11 @@ body {
   background-color: rgba( 255, 255, 255, 0.5 );
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 55%;
   width: 400px;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 230px 0;
+  padding: 280px 0;
 }
 
 .form {

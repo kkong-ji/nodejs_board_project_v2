@@ -109,7 +109,7 @@
                 <div class="form-row">
                     <div class="form-group col-3">
                         <label>Show</label>
-                        <select name="limit" class="custom-select" style="text-align:left; width:97px;"
+                        <select name="limit" class="custom-select" style="width:97px;"
                             onchange="this.parentElement.parentElement.parentElement.submit()">
                             <option value="5" <%=limit==5?'selected':'' %>>5 posts</option>
                             <option value="10" <%=limit==10?'selected':'' %>>10 posts</option>
@@ -119,7 +119,7 @@
                     <div class="form-group col-9">
                         <label>Search</label>
                         <div class="input-group">
-                            <select name="searchType" class="custom-select">
+                            <select name="searchType" class="custom-select" style="position:relative; width:120px;">
                                 <option value="title,body" <%=searchType=='title,body' ?'selected':'' %>>Title, Body</option>
                                 <option value="title" <%=searchType=='title' ?'selected':'' %>>Title</option>
                                 <option value="body" <%=searchType=='body' ?'selected':'' %>>Body</option>
@@ -139,6 +139,7 @@
         <style>
             body {
                 background-image: url("./images/namsan.jpg");
+                background-size: cover;
             }
         </style>
 </body>

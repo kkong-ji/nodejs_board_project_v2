@@ -9,6 +9,7 @@ var BoxSDK = require('box-node-sdk');
 var client;
 var boxClientId = process.env.BOX_CLIENT_ID;
 var boxAppToken = process.env.BOX_APP_TOKEN;
+console.log(process.env.BOX_APP_TOKEN);
 var isBoxEnabled = boxClientId && boxAppToken;
 
 if(isBoxEnabled) {
