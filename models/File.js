@@ -8,15 +8,15 @@ var path = require('path');
 var BoxSDK = require('box-node-sdk');
 var client;
 var boxCredentials = require('../config/box.json');
-var boxClientId = boxCredentials.BOX_CLIENT_ID;
-var boxAppToken = boxCredentials.BOX_APP_TOKEN;
+var boxClientId = boxCredentials.boxAppSettings.BOX_CLIENT_ID;
+var boxAppToken = boxCredentials.boxAppSettings.BOX_APP_TOKEN;
 var isBoxEnabled = boxClientId && boxAppToken;
 
 const { application } = require('express');
 
 if(isBoxEnabled) {
   var sdk = new BoxSDK({
-    clientID: boxCredentials.BOX_CLIENT_ID,
+    clientID: boxClientId,
     clientSecret: ''
   });
   client = sdk.getBasicClient(boxAppToken);
